@@ -152,5 +152,44 @@ Object1.greeting=function(){
 // singleton or method to create object with constructure
 
 const tinder= new Object()
-console.log(tinder)
+// console.log(tinder)
+
+const RegularUser={
+    email:"RegularUseremail.com",
+    fullName:{
+        firstName:"John",
+        lastName:"Doe"
+    },
+    age:30,
+    gender:"Male",
+    location:"Gorakhpur",
+    hobbies:["Reading","Writing","Coding"],
+    getFullName:function(){ return this.fullName.firstName+" "+this.fullName.lastName },
+    getAge:function(){return this.age},
+    getLocation:function(){return this.location},
+    getHobbies:function(){ return this.hobbies}
+}
+
+let age = RegularUser.age+RegularUser.age
+// console.log(age)
+
+// to merge two object
+const user1={
+    name:"John",
+    age:50,
+    location:"Deoria"
+    }
+    const user2={
+        name:"Doe",
+        age:30,
+        location:"Gorakhpur"
+        }
+const user3 = {user1,user2}// output wiil be
+/* {
+    user1: { name: 'John', age: 50, location: 'Deoria' },
+    user2: { name: 'Doe', age: 30, location: 'Gorakhpur' }
+  }*/
+
+const user4 = Object.assign(user1,user2)
+console.log(user4)
 
