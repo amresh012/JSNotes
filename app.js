@@ -184,12 +184,18 @@ const user1={
         age:30,
         location:"Gorakhpur"
         }
-const user3 = {user1,user2}// output wiil be
+// const user3 = {user1,user2}// output wiil be
 /* {
     user1: { name: 'John', age: 50, location: 'Deoria' },
     user2: { name: 'Doe', age: 30, location: 'Gorakhpur' }
   }*/
 
-const user4 = Object.assign(user1,user2)
-console.log(user4)
+  const arra =[1,2,3]
+  const arra2 =[1,2,3]
+  console.log([...arra , ...arra2]) //iska output [1,2,3,1,2,3] hai
+
+// const user4 = Object.assign({},user1,user2) //key in both object should not match with eatch other Warna 2 object ki value ko hi print karge only
+const user4 = {...user1, ...user2}
+console.log(user4)// aur iska { name: 'Doe', age: 30, location: 'Gorakhpur' } ye q aa raha hai dono object ka data merge nahi ho raha hai operator se q
+
 
