@@ -30,6 +30,11 @@ const local=date.toLocaleString('default', {
 })
 // console.log(local)
 
+
+
+/********************************************************************
+ *           Array in Javascript
+ * ********************************************* */
 // Array in javascript
 // Array creates shallow copie when copied it mean when something is 
 // changed in copied array also reflect in original array also
@@ -58,3 +63,94 @@ const aray=newArr.slice(0,3) //output [1,20,30]
 // console.log(aray)
 // console.log(newArr)
 // console.log(mynewArr)
+
+const marvel_hero =["thor" ,"Iron man" , "Hulk"]
+const DC_hero =["wonderwomen" ,"Aquaman" , "batman"]
+
+// marvel_hero.push(DC_hero)
+const all_hero=[...marvel_hero ,...DC_hero ,...Arr] //... is spread operator 
+
+// Array flatening
+// to tackel theis problem we use flat() method of arrray
+const UnFlatArray =[1,2,[3,4],5,6,[7,8,[9,10,[11,12,[13,14]]]]]
+// console.log(UnFlatArray)
+const FlatArr= UnFlatArray.flat(0) //0 based depth
+const FlatArr1= UnFlatArray.flat(1) //0 based depth
+const FlatArr2= UnFlatArray.flat(2) //0 based depth
+const FlatArr3= UnFlatArray.flat(3) //0 based depth
+// console.log("F-0:-",FlatArr ,"F-1:-", FlatArr1,"F-2:-",FlatArr2,"F-3:-",FlatArr3)
+
+// to check if a given output or input is Array or not
+const isArray = Array.isArray(FlatArr)
+// console.log(isArray)
+
+// to conver any I/P O/P in array
+const arr = Array.from("hello")
+// console.log(arr)
+ const ObjArr = Array.from({name:"hello"})
+ //output:- Empty Array because we have to tell the method that on which value we have to make a array
+//  console.log(ObjArr)
+
+// to mae a array of diifernt value like variable or array or object
+
+let obj={hello:1}
+let arr1=[1,2,3,4,5]
+let variable = 230
+// Array.of() method will make array out of the above variables
+Array.of(obj,arr1,variable)
+
+
+/*********************************************************************\
+      Object in javascript
+
+*********************************************************************/
+
+// Two Method Of Declearing Object
+// 1- object Literals and Constructure
+// jab hum object ko literal ki tarah banate hai tho wah singlton nahi hota
+
+
+
+// object literal method
+
+// Symbols are not included in for...in Loop**Note**
+/*
+**********There are various methods available with Symbol.******
+for()	Searches for existing symbols
+keyFor()	Returns a shared symbol key from the global symbol registry.
+toSource()	Returns a string containing the source of the Symbol object
+toString()	Returns a string containing the description of the Symbol
+valueOf()	Returns the primitive value of the Symbol object.
+*/
+const mysim = Symbol("Key1")//symbol declertion method
+const Object1 = 
+{
+    name:"Me",
+    age:20,
+    [mysim]:"myKey",
+    location:"gorakhpur",
+    email:"hello@email.com",
+    boolean:true
+}
+// console.log(Object1)
+
+// object accessing methods
+// console.log(Object1.email)
+// console.log(Object1["email"])
+// console.log(typeof Object1[mysim])
+
+// To blcok change propogation in object we use freeze() method it takes object as parameter
+// Object.freeze(Object1)
+
+
+// here this keyword is reffering/pointing to Object1
+Object1.greeting=function(){
+    console.log("Hello My Name is "+this.name)
+}
+// console.log(Object1.greeting())
+
+// singleton or method to create object with constructure
+
+const tinder= new Object()
+console.log(tinder)
+
